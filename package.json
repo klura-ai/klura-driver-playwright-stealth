@@ -1,6 +1,9 @@
 {
-  "name": "klura-driver-playwright-stealth",
+  "name": "@klura/driver-playwright-stealth",
   "version": "0.1.0",
+  "publishConfig": {
+    "access": "public"
+  },
   "description": "Stealth Playwright driver for klura — adds puppeteer-extra-plugin-stealth fingerprint patches",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -25,7 +28,7 @@
     "node": ">=20.0.0"
   },
   "peerDependencies": {
-    "klura": ">=0.1.0",
+    "@klura/runtime": ">=0.1.0",
     "playwright": ">=1.50.0"
   },
   "dependencies": {
@@ -34,7 +37,7 @@
   },
   "devDependencies": {
     "@types/node": "^25.5.2",
-    "klura": "file:../runtime",
+    "@klura/runtime": "file:../runtime",
     "playwright": "^1.50.0",
     "typescript": "^6.0.2"
   }

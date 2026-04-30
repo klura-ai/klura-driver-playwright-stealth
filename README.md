@@ -1,6 +1,6 @@
-# klura-driver-playwright-stealth
+# @klura/driver-playwright-stealth
 
-Stealth Playwright driver for [klura](https://www.npmjs.com/package/klura). Extends klura's built-in `PlaywrightDriver` with [`playwright-extra`](https://www.npmjs.com/package/playwright-extra) and [`puppeteer-extra-plugin-stealth`](https://www.npmjs.com/package/puppeteer-extra-plugin-stealth) applied at launch, so every browser context ships the stealth DOM patches:
+Stealth Playwright driver for [@klura/runtime](https://www.npmjs.com/package/@klura/runtime). Extends klura's built-in `PlaywrightDriver` with [`playwright-extra`](https://www.npmjs.com/package/playwright-extra) and [`puppeteer-extra-plugin-stealth`](https://www.npmjs.com/package/puppeteer-extra-plugin-stealth) applied at launch, so every browser context ships the stealth DOM patches:
 
 - `navigator.webdriver` returns `false`
 - `chrome.runtime` shimmed
@@ -13,7 +13,7 @@ This is a real browser behind the patches — a real user is expected to drive i
 ## Install
 
 ```bash
-npm install klura klura-driver-playwright-stealth playwright
+npm install @klura/runtime @klura/driver-playwright-stealth playwright
 ```
 
 ## Configure
@@ -24,7 +24,7 @@ Point `pool.driver` at this package in `~/.klura/config.json`:
 {
   "pool": {
     "mode": "local",
-    "driver": "klura-driver-playwright-stealth"
+    "driver": "@klura/driver-playwright-stealth"
   }
 }
 ```

@@ -5,24 +5,25 @@
 // faked, WebGL vendor/renderer strings normalized, language/platform
 // consistency enforced.
 //
-// Usage: install this package alongside `klura`, then point at it from
+// Usage: install this package alongside `@klura/runtime`, then point at it from
 // `~/.klura/config.json`:
 //
-//   { "pool": { "driver": "klura-driver-playwright-stealth" } }
+//   { "pool": { "driver": "@klura/driver-playwright-stealth" } }
 //
 // The runtime's `resolveDriverClass` will require() this package and
 // instantiate the default export.
 
-// Import the driver class directly from klura's compiled `drivers/playwright`
-// entry point, not the top-level `klura` barrel. The barrel eagerly constructs
-// a Pool at module load, which reads `~/.klura/config.json` — so if the user
-// has set `pool.driver` to this package, requiring `klura` from here would
-// cause a circular load and the Pool would see a half-initialized exports
-// object. Going straight at the driver file sidesteps that entirely.
+// Import the driver class directly from the runtime's compiled
+// `drivers/playwright` entry point, not the top-level `@klura/runtime` barrel.
+// The barrel eagerly constructs a Pool at module load, which reads
+// `~/.klura/config.json` — so if the user has set `pool.driver` to this
+// package, requiring `@klura/runtime` from here would cause a circular load and
+// the Pool would see a half-initialized exports object. Going straight at the
+// driver file sidesteps that entirely.
 import {
   PlaywrightDriver,
   type PlaywrightDriverOptions,
-} from 'klura/dist/drivers/playwright';
+} from '@klura/runtime/dist/drivers/playwright';
 import type { BrowserType } from 'playwright';
 
 // eslint-disable-next-line @typescript-eslint/no-require-imports
